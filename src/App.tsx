@@ -15,7 +15,7 @@ const App: React.FC = () => {
 
   const onSearch = async (username: string) => {
     const apiReponse = await getResponse(username);
-    console.log(apiReponse);
+    setUserApiReponse(apiReponse);
   };
 
   return (
@@ -24,7 +24,8 @@ const App: React.FC = () => {
       <Container>
         <Loading />
         <Badge />
-        <ErrorBox />
+        {userApiResponse?.error
+            && <ErrorBox error={userApiResponse?.error} />}
       </Container>
     </>
   );

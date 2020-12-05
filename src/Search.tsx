@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Color } from './styles';
+import SearchIcon from './assets/SearchIcon.svg';
 
 const Container = styled.div`
   background: ${Color.White};
@@ -12,7 +13,7 @@ const Container = styled.div`
 `;
 
 const Input = styled.input`
-  background: ${Color.Porcelain};
+  background: ${Color.Porcelain} url(${SearchIcon}) no-repeat 4%;
   color: ${Color.SilverChalice};
   padding: 10px 32px;
   font-size: 1rem;

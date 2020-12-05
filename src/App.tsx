@@ -6,9 +6,11 @@ import { Loading } from './Loading';
 import { Search } from './Search';
 import { UserApiResponse } from './interfaces';
 import { getResponse } from './apiHandler';
-import { GlobalStyle } from './styles';
+import { Color, GlobalStyle } from './styles';
 
 const Container = styled.div`
+  background: ${Color.White};
+  padding: 24px;
 `;
 
 const App: React.FC = () => {

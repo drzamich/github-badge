@@ -26,5 +26,15 @@ export const GlobalStyle = createGlobalStyle`
   }
   body {
     background: ${Color.Mercury};
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #root {
+    width: 100%;
+    max-width: 375px;
+    display: flex;
+    flex-direction: column;
+    padding: 50px 0;
   }
 `;

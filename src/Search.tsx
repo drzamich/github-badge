@@ -1,7 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Color } from './styles';
 
 const Container = styled.div`
+  background: ${Color.White};
+  padding: 24px;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.1);
+  position: relative;
 `;
 
 const Input = styled.input`

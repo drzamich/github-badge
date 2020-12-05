@@ -21,6 +21,7 @@ export const Search: React.FC<SearchProps> = ({ onSearch }) => {
       <Input
         type="text"
         placeholder="Search for users"
+        autoComplete="off"
         value={value}
         onChange={(e: React.ChangeEvent<HTMLInputElement>) => setValue(e.target.value)}
       />

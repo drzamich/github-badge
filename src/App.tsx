@@ -6,6 +6,7 @@ import { Loading } from './Loading';
 import { Search } from './Search';
 import { UserApiResponse } from './interfaces';
 import { getResponse } from './apiHandler';
+import { GlobalStyle } from './styles';
 
 const Container = styled.div`
 `;
@@ -20,6 +21,7 @@ const App: React.FC = () => {
 
   return (
     <>
+      <GlobalStyle />
       <Search onSearch={onSearch} />
       <Container>
         <Loading />

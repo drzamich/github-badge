@@ -5,6 +5,7 @@ import { ErrorBox } from './ErrorBox';
 import { Loading } from './Loading';
 import { Search } from './Search';
 import { UserApiResponse } from './interfaces';
+import { getResponse } from './apiHandler';
 
 const Container = styled.div`
 `;
@@ -12,8 +13,9 @@ const Container = styled.div`
 const App: React.FC = () => {
   const [userApiResponse, setUserApiReponse] = React.useState<UserApiResponse | null>(null);
 
-  const onSearch = (username: string) => {
-    console.log(username);
+  const onSearch = async (username: string) => {
+    const apiReponse = await getResponse(username);
+    console.log(apiReponse);
   };
 
   return (

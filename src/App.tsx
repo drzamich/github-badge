@@ -8,15 +8,21 @@ import { Search } from './Search';
 const Container = styled.div`
 `;
 
-const App: React.FC = () => (
-  <>
-    <Search />
-    <Container>
-      <Loading />
-      <Badge />
-      <ErrorBox />
-    </Container>
-  </>
-);
+const App: React.FC = () => {
+  const onSearch = (username: string) => {
+    console.log(username);
+  };
+
+  return (
+    <>
+      <Search onSearch={onSearch} />
+      <Container>
+        <Loading />
+        <Badge />
+        <ErrorBox />
+      </Container>
+    </>
+  );
+};
 
 export default App;

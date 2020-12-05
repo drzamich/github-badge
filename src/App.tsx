@@ -23,7 +23,8 @@ const App: React.FC = () => {
       <Search onSearch={onSearch} />
       <Container>
         <Loading />
-        <Badge />
+        {userApiResponse?.user
+            && <Badge user={userApiResponse.user} />}
         {userApiResponse?.error
             && <ErrorBox error={userApiResponse?.error} />}
       </Container>

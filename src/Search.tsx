@@ -16,6 +16,13 @@ interface SearchProps {
 
 export const Search: React.FC<SearchProps> = ({ onSearch }) => {
   const [value, setValue] = React.useState('');
+
+  const onInputKeyDown = (event: React.KeyboardEvent<HTMLInputElement>): void => {
+    if (event.key === 'Enter') {
+      onSearch(value);
+    }
+  };
+
   return (
     <Container>
       <Input
@@ -24,6 +31,7 @@ export const Search: React.FC<SearchProps> = ({ onSearch }) => {
         autoComplete="off"
         value={value}
         onChange={(e: React.ChangeEvent<HTMLInputElement>) => setValue(e.target.value)}
+        onKeyDown={onInputKeyDown}
       />
       <Button type="button" onClick={() => onSearch(value)}>
         Search

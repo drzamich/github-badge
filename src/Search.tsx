@@ -12,9 +12,28 @@ const Container = styled.div`
 `;
 
 const Input = styled.input`
+  background: ${Color.Porcelain};
+  color: ${Color.SilverChalice};
+  padding: 10px 32px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 0;
+
+  &::placeholder {
+    color: ${Color.SilverChalice};
+  }
 `;
 
 const Button = styled.button`
+  background: ${Color.RoyalBlue};
+  border: 0;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 0.85rem;
+  line-height: 0.85rem;
+  color: ${Color.White};
+  font-weight: 500;
+  cursor: pointer;
 `;
 
 interface SearchProps {

@@ -23,5 +23,4 @@ jobs:
            npm ci
            npm run test:ci
       - name: Run ESLint checks
-        working-directory: ./ui
         run: npm run eslint

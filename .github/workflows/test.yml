@@ -19,7 +19,6 @@ jobs:
         with:
           node-version: '14'
       - name: Run unit tests and build
-        working-directory: ./ui
         run: |
            npm ci
            npm run test:ci

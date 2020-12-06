@@ -30,7 +30,7 @@ const Input = styled.input`
 `;
 
 const Button = styled.button`
-  background: ${Color.RoyalBlue};
+  background: ${Color.PurpleHeart};
   border: 0;
   border-radius: 8px;
   padding: 12px;

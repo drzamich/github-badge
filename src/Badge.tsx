@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { User } from './interfaces';
-import { Color, Heading } from './styles';
+import { Color, Heading, SRHeading } from './styles';
 
 interface ContainerDiv {
   $loading: boolean,
@@ -63,10 +63,11 @@ interface BadgeProps {
 
 export const Badge: React.FC<BadgeProps> = ({ user, loading, setLoading }) => (
   <Container $loading={loading} aria-hidden={loading}>
+    <SRHeading>GitHub user found.</SRHeading>
     <IdContainer>
       <Img
         src={user?.avatar_url}
-        alt={user?.name || user?.login}
+        alt={`Avatar of ${user?.name || user?.login}`}
         onLoad={() => setLoading(false)}
       />
       <Username>{user?.name || user?.login}</Username>

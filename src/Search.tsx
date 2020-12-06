@@ -72,7 +72,11 @@ export const Search: React.FC<SearchProps> = ({ onSearch }) => {
         onChange={(e: React.ChangeEvent<HTMLInputElement>) => setValue(e.target.value)}
         onKeyDown={onInputKeyDown}
       />
-      <Button type="button" onClick={() => onSearch(value)}>
+      <Button
+        type="button"
+        onClick={() => onSearch(value)}
+        aria-controls="dynamic-container"
+      >
         Search
       </Button>
     </Container>

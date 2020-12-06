@@ -6,24 +6,27 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="sc-pFZIQ jgyxMO"
+        class="sc-jrAGrp ZqWpm"
       >
         <input
           autocomplete="off"
-          class="sc-jrAGrp bAGLIR"
+          class="sc-kEjbxe GjZAm"
           placeholder="Search for users"
           type="text"
           value=""
         />
         <button
-          class="sc-kEjbxe gscWDP"
+          aria-controls="dynamic-container"
+          class="sc-iqHYGH SunJe"
           type="button"
         >
           Search
         </button>
       </div>
       <div
-        class="sc-iqHYGH IbLJK"
+        aria-live="polite"
+        class="sc-crrsfI pLNlD"
+        id="dynamic-container"
       >
         <h3
           class="sc-bdfBwQ fVVSDW"
@@ -35,24 +38,27 @@ Object {
   </body>,
   "container": <div>
     <div
-      class="sc-pFZIQ jgyxMO"
+      class="sc-jrAGrp ZqWpm"
     >
       <input
         autocomplete="off"
-        class="sc-jrAGrp bAGLIR"
+        class="sc-kEjbxe GjZAm"
         placeholder="Search for users"
         type="text"
         value=""
       />
       <button
-        class="sc-kEjbxe gscWDP"
+        aria-controls="dynamic-container"
+        class="sc-iqHYGH SunJe"
         type="button"
       >
         Search
       </button>
     </div>
     <div
-      class="sc-iqHYGH IbLJK"
+      aria-live="polite"
+      class="sc-crrsfI pLNlD"
+      id="dynamic-container"
     >
       <h3
         class="sc-bdfBwQ fVVSDW"

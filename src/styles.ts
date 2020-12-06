@@ -59,3 +59,9 @@ export const Heading = styled.h3`
   font-weight: 500;
   letter-spacing: 0.011rem;
 `;
+
+export const SRHeading = styled.h3`
+  position: absolute;
+  left: -1000px;
+  top: -1000px;
+`;

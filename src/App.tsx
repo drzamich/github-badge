@@ -34,7 +34,7 @@ const App: React.FC = () => {
     <>
       <GlobalStyle />
       <Search onSearch={onSearch} />
-      <Container>
+      <Container id="dynamic-container" aria-live="polite">
         {firstRun && <Heading>Use the search input to look for a user.</Heading>}
         {loading && <Loading />}
         {userApiResponse?.user

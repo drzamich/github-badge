@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import { User, Repository } from '../interfaces';
 
 export const parsedUser: User = {

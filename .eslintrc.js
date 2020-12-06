@@ -13,5 +13,6 @@ module.exports = {
     "max-len": [1, 120],
     "@typescript-eslint/no-unused-vars": 1,
     "@typescript-eslint/no-unused-expressions": [2, {allowShortCircuit: true}],
+    "import/no-extraneous-dependencies": [2, { devDependencies: true }],
   },
 }

@@ -18,7 +18,15 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: '14'
-      - name: Run unit tests and build
+      - name: Cache Node.js modules
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.OS }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.OS }}-node-
+            ${{ runner.OS }}-
+      - name: Run unit tests
         run: |
            npm ci
            npm run test:ci

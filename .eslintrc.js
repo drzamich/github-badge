@@ -7,6 +7,7 @@ module.exports = {
     "import/prefer-default-export": 0,
     "react/prop-types": 0,
     "max-len": [1, 120],
-    "@typescript-eslint/no-unused-vars": 1
+    "@typescript-eslint/no-unused-vars": 1,
+    "@typescript-eslint/no-unused-expressions": [2, {allowShortCircuit: true}],
   }
 }

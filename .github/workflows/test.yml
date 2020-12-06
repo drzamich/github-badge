@@ -1,0 +1,32 @@
+name: Code quality check
+
+on:
+  push:
+    branches:
+      - main
+      - dev
+    paths:
+      - '.'
+  pull_request:
+    branches:
+      - main
+    paths:
+      - '.'
+
+jobs:
+  test:
+    name: Run unit tests and ESLint checks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '14'
+      - name: Run unit tests and build
+        working-directory: ./ui
+        run: |
+           npm ci
+           npm run test:ci
+      - name: Run ESLint checks
+        working-directory: ./ui
+        run: npm run eslint

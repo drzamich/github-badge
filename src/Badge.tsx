@@ -3,6 +3,14 @@ import styled from 'styled-components';
 import { User } from './interfaces';
 import { Color, Heading } from './styles';
 
+interface ContainerDiv {
+  $loading: boolean,
+}
+
+const Container = styled.div<ContainerDiv>`
+  display: ${(props) => (props.$loading ? 'none' : 'block')};
+`;
+
 const IdContainer = styled.div`
   width: 100%;
   display: flex;
@@ -48,12 +56,18 @@ const Repos = styled.ul`
 
 interface BadgeProps {
   user: User | undefined,
+  loading: boolean,
+  setLoading: React.Dispatch<React.SetStateAction<boolean>>,
 }
 
-export const Badge: React.FC<BadgeProps> = ({ user }) => (
-  <>
+export const Badge: React.FC<BadgeProps> = ({ user, loading, setLoading }) => (
+  <Container $loading={loading} aria-hidden={loading}>
     <IdContainer>
-      <Img src={user?.avatar_url} alt={user?.name || user?.login} />
+      <Img
+        src={user?.avatar_url}
+        alt={user?.name || user?.login}
+        onLoad={() => setLoading(false)}
+      />
       <Username>{user?.name || user?.login}</Username>
     </IdContainer>
 
@@ -72,5 +86,5 @@ export const Badge: React.FC<BadgeProps> = ({ user }) => (
       </Repos>
     </>
   ) }
-  </>
+  </Container>
 );

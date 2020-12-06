@@ -24,7 +24,9 @@ const App: React.FC = () => {
     setLoading(true);
     const apiReponse = await getResponse(username);
     setUserApiReponse(apiReponse);
-    setLoading(false);
+    if (!(apiReponse.user)) {
+      setLoading(false);
+    }
   };
 
   return (
@@ -34,8 +36,8 @@ const App: React.FC = () => {
       <Container>
         {firstRun && <Heading>Use the search input to look for a user.</Heading>}
         {loading && <Loading />}
-        {userApiResponse?.user && !loading
-            && <Badge user={userApiResponse.user} />}
+        {userApiResponse?.user
+            && <Badge loading={loading} setLoading={setLoading} user={userApiResponse.user} />}
         {userApiResponse?.error && !loading
             && <ErrorBox error={userApiResponse?.error} />}
       </Container>

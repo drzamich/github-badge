@@ -40,6 +40,10 @@ const Button = styled.button`
   font-weight: 500;
   cursor: pointer;
 
+  &:hover {
+    opacity: 0.8;
+  }
+
   @media (max-width: ${Breakpoint.Width}), ${Breakpoint.TouchScreen} {
     margin-top: 16px;
   }

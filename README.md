@@ -1,5 +1,6 @@
 # GitHub Badge app
-Simple app displaying GitHub user details.
+Simple app using [GitHub REST API](https://docs.github.com/en/free-pro-team@latest/rest) to display GitHub user details.
+
 ## See live @ [drzamich.github.io/github-badge](https://drzamich.github.io/github-badge/).
 ## Features
 * Display user details: avatar, name, bio and 3 most-starred repos.
@@ -8,11 +9,9 @@ Simple app displaying GitHub user details.
 * Complete CI workflow: test + lint + build + deploy defined in a single YAML file thanks to [GitHub Actions](https://docs.github.com/en/free-pro-team@latest/actions).
 ## Technologies used
 * React + TypeScript (bootstrapped with [CRA](https://create-react-app.dev/))
+* GitHub REST API
 * [styled-components](https://styled-components.com/)
 * Docker
-
-
-
 
 ## Run locally
 Using docker to run the app locally is the recommended approach, as it does not matter if you have Node v12 installed on Ubuntu running on an AMD processor or a Windows machine with Node v15 on an Intel. When using Docker you can be sure that you won't run into any config or compatibility issues.

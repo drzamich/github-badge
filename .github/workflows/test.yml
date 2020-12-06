@@ -5,13 +5,9 @@ on:
     branches:
       - main
       - dev
-    paths:
-      - '.'
   pull_request:
     branches:
       - main
-    paths:
-      - '.'
 
 jobs:
   test:

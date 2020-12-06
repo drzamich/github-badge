@@ -1,4 +1,4 @@
-name: Code quality check
+name: Test Build Deploy
 
 on:
   push:
@@ -32,3 +32,25 @@ jobs:
            npm run test:ci
       - name: Run ESLint checks
         run: npm run eslint
+
+  build_and_deploy:
+    name: Build and deploy
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '14'
+      - name: Cache Node.js modules
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.OS }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.OS }}-node-
+            ${{ runner.OS }}-
+      - name: Build
+        run: |
+            npm ci
+            npm run build

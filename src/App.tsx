@@ -15,10 +15,14 @@ const Container = styled.div`
 
 const App: React.FC = () => {
   const [userApiResponse, setUserApiReponse] = React.useState<UserApiResponse | null>(null);
+  const [loading, setLoading] = React.useState<boolean>(false);
 
   const onSearch = async (username: string) => {
+    setUserApiReponse(null);
+    setLoading(true);
     const apiReponse = await getResponse(username);
     setUserApiReponse(apiReponse);
+    setLoading(false);
   };
 
   return (
@@ -26,10 +30,10 @@ const App: React.FC = () => {
       <GlobalStyle />
       <Search onSearch={onSearch} />
       <Container>
-        <Loading />
-        {userApiResponse?.user
+        {loading && <Loading />}
+        {userApiResponse?.user && !loading
             && <Badge user={userApiResponse.user} />}
-        {userApiResponse?.error
+        {userApiResponse?.error && !loading
             && <ErrorBox error={userApiResponse?.error} />}
       </Container>
     </>

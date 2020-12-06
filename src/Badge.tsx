@@ -1,24 +1,49 @@
 import React from 'react';
 import styled from 'styled-components';
 import { User } from './interfaces';
+import { Color, Heading } from './styles';
 
 const IdContainer = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
 `;
 
 const Img = styled.img`
+  width: 64px;
+  height: 64px;
+  border-radius: 12px;
 `;
 
 const Username = styled.h3`
+  word-spacing: 300px;
+  margin-left: 16px;
 `;
 
 const Bio = styled.p`
+  color: ${Color.Gray};
+  margin-top: 16px;
 `;
 
-const TopReposHeading = styled.h3`
-
+const TopReposHeading = styled(Heading)`
+  margin: 16px 0;
 `;
 
 const Repos = styled.ul`
+  list-style: none;
+  a {
+    display: block;
+    padding: 16px;
+    box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    color: ${Color.RoyalBlue};
+    text-decoration: none;
+    margin-bottom: 16px;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 `;
 
 interface BadgeProps {

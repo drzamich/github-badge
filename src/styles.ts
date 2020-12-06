@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 
 export enum Color {
   Black = '#000000',
@@ -41,4 +41,11 @@ export const GlobalStyle = createGlobalStyle`
     flex-direction: column;
     padding: 50px 0;
   }
+`;
+
+export const Heading = styled.h3`
+  font-size: 1.286rem;
+  line-height: 1.714rem;
+  font-weight: 500;
+  letter-spacing: 0.011rem;
 `;

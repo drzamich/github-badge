@@ -11,6 +11,7 @@ import { Color, GlobalStyle, Heading } from './styles';
 const Container = styled.div`
   background: ${Color.White};
   padding: 24px;
+  flex: 1 1 auto;
 `;
 
 const App: React.FC = () => {

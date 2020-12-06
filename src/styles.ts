@@ -11,6 +11,12 @@ export enum Color {
   White = '#FFFFFF',
 }
 
+export enum Breakpoint {
+  Width = '400px',
+  Height = '600px',
+  TouchScreen = '(hover: none) and (pointer: coarse)',
+}
+
 export const GlobalStyle = createGlobalStyle`
   * {
     margin: 0;
@@ -40,6 +46,10 @@ export const GlobalStyle = createGlobalStyle`
     display: flex;
     flex-direction: column;
     padding: 50px 0;
+
+    @media (max-height: ${Breakpoint.Height}) {
+      padding: 0;
+    }
   }
 `;
 

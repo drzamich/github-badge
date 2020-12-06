@@ -47,6 +47,7 @@ const Repos = styled.ul`
     color: ${Color.RoyalBlue};
     text-decoration: none;
     margin-bottom: 16px;
+    word-break: break-all;
 
     &:hover {
       text-decoration: underline;

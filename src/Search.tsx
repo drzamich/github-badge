@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Color } from './styles';
+import { Breakpoint, Color } from './styles';
 import SearchIcon from './assets/SearchIcon.svg';
 
 const Container = styled.div`
@@ -10,6 +10,10 @@ const Container = styled.div`
   justify-content: space-between;
   box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.1);
   position: relative;
+
+  @media (max-width: ${Breakpoint.Width}), ${Breakpoint.TouchScreen} {
+    flex-direction: column;
+  }
 `;
 
 const Input = styled.input`
@@ -35,6 +39,10 @@ const Button = styled.button`
   color: ${Color.White};
   font-weight: 500;
   cursor: pointer;
+
+  @media (max-width: ${Breakpoint.Width}), ${Breakpoint.TouchScreen} {
+    margin-top: 16px;
+  }
 `;
 
 interface SearchProps {

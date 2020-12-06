@@ -1,5 +1,6 @@
 import React from 'react';
 import { AxiosError } from 'axios';
+import { Heading } from './styles';
 
 interface ErrorBoxProps {
   error: AxiosError
@@ -18,5 +19,5 @@ export const ErrorBox: React.FC<ErrorBoxProps> = ({ error }) => {
   } else if (error.request) {
     message = 'Network issue. Please try again.';
   }
-  return <>{message}</>;
+  return <Heading>{message}</Heading>;
 };

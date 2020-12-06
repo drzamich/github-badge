@@ -5,9 +5,17 @@ on:
     branches:
       - main
       - dev
+    paths-ignore:
+      - '**/README.md'
+      - '**/Dockerfile'
+      - '**/.dockerignore'
   pull_request:
     branches:
       - main
+    paths-ignore:
+      - '**/README.md'
+      - '**/Dockerfile'
+      - '**/.dockerignore'
 
 jobs:
   test:

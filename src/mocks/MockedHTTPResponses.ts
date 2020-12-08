@@ -1,6 +1,5 @@
 import { AxiosError, AxiosResponse } from 'axios';
-import UserEndpointResponse from './UserEndpointResponse.json';
-import ReposEndpointResponse from './ReposEndpointResponse.json';
+import { user as ValidUserResponse, repos as ValidReposResponse } from './ValidAPIResponses.json';
 import { Repository, User } from '../interfaces';
 
 const defResponse = {
@@ -30,12 +29,12 @@ const defError: AxiosError = {
 };
 
 export const userReponse: AxiosResponse<User> = {
-  data: UserEndpointResponse,
+  data: ValidUserResponse,
   ...defSuccessResponse,
 };
 
 export const reposResponse: AxiosResponse<Repository[]> = {
-  data: ReposEndpointResponse,
+  data: ValidReposResponse,
   ...defSuccessResponse,
 };
 

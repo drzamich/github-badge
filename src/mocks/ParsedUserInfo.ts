@@ -10,8 +10,8 @@ export const parsedUser: User = {
 
 export const parsedRepos: Repository[] = [
   { full_name: 'TejasQ/add-gitignore', html_url: 'https://github.com/TejasQ/add-gitignore', stargazers_count: 450 },
-  { full_name: 'TejasQ/basically-fullstack-graphql', html_url: 'https://github.com/TejasQ/basically-fullstack-graphql', stargazers_count: 194 },
-  { full_name: 'TejasQ/basically-streams', html_url: 'https://github.com/TejasQ/basically-streams', stargazers_count: 122 },
+  { full_name: 'TejasQ/anna-artemov.now.sh', html_url: 'https://github.com/TejasQ/anna-artemov.now.sh', stargazers_count: 5 },
+  { full_name: 'TejasQ/awesome-cli-apps', html_url: 'https://github.com/TejasQ/awesome-cli-apps', stargazers_count: 3 },
 ];
 
 export const finalUser: User = {

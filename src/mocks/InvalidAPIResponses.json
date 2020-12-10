@@ -1,6 +1,6 @@
 {
   "user": {
-      "login": "TejasQ",
+      "login": [],
       "id": 9947422,
       "node_id": "MDQ6VXNlcjk5NDc0MjI=",
       "avatar_url": "https://avatars1.githubusercontent.com/u/9947422?v=4",
@@ -109,7 +109,7 @@
       "svn_url": "https://github.com/TejasQ/a11y-for-managers",
       "homepage": null,
       "size": 347,
-      "stargazers_count": 0,
+      "stargazers_count": null,
       "watchers_count": 0,
       "language": "JavaScript",
       "has_issues": false,

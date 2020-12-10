@@ -6,6 +6,7 @@ export const parsedUser: User = {
   login: 'TejasQ',
   avatar_url: 'https://avatars1.githubusercontent.com/u/9947422?v=4',
   bio: 'I write code and love life.',
+  repos: undefined,
 };
 
 export const parsedRepos: Repository[] = [

@@ -14,5 +14,7 @@ module.exports = {
     "@typescript-eslint/no-unused-vars": 1,
     "@typescript-eslint/no-unused-expressions": [2, {allowShortCircuit: true}],
     "import/no-extraneous-dependencies": [2, { devDependencies: true }],
+    "arrow-body-style": 0,
+    "object-curly-newline": 0
   },
 }

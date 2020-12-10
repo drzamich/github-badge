@@ -29,7 +29,7 @@ const parseError = (error: Error | AxiosError): UserApiResponse => {
 
 export const getUser = async (username: string): Promise<User> => {
   const baseUrl = 'https://api.github.com/users/';
-  return axios.get<User>(`${baseUrl}${username}`)
+  return axios.get<User>('http://localhost:3001/user')
     .then((res) => res.data)
     .then(({ login, name, avatar_url, bio }) => ({ login, name, avatar_url, bio, repos: undefined }))
     .then((data) => checkValidity(data, UserT))
@@ -44,7 +44,7 @@ export const getRepositories = async (username: string): Promise<Repository[]> =
   };
 
   const baseUrl = 'https://api.github.com/users/';
-  return axios.get<Repository[]>(`${baseUrl}${username}/repos`)
+  return axios.get<Repository[]>('http://localhost:3001/repos')
     .then((res) => res.data)
     .then((res) => res?.map(
       ({ full_name, html_url, stargazers_count }) => ({ full_name, html_url, stargazers_count }),

@@ -15,23 +15,6 @@ const Container = styled.div`
   flex: 1 1 auto;
 `;
 
-// interface UseApiResponse {
-//   apiResponse: UserApiResponse | null,
-//   loading: boolean,
-//   setUsername: React.Dispatch<React.SetStateAction<string>>
-//   firstRun: boolean,
-// }
-
-// type X<T> = {
-//   type: 'foo'
-// } | {
-//   type: 'bar',
-//   val: T,
-// };
-
-// const x: X<string> = { type: 'bar', val: '1000' };
-// const x2: X<string> = { type: 'foo' };
-
 type Async<T> = {
   type: 'loading'
 } | {
@@ -48,9 +31,7 @@ interface UseApiResponse {
 
 const useApiResponse = (): UseApiResponse => {
   const [username, setUsername] = React.useState('');
-  // const [loading, setLoading] = React.useState(false);
   const [apiResponse, setApiReponse] = React.useState<Async<UserApiResponse>>({ type: 'notStarted' });
-  // const [firstRun, setFirstRun] = React.useState<boolean>(true);
 
   React.useEffect(() => {
     const setData = async () => {
@@ -65,30 +46,6 @@ const useApiResponse = (): UseApiResponse => {
     apiResponse, setUsername,
   };
 };
-
-// const useApiResponse = (): UseApiResponse => {
-//   const [username, setUsername] = React.useState('');
-//   const [loading, setLoading] = React.useState(false);
-//   const [apiResponse, setApiReponse] = React.useState<UserApiResponse | null>(null);
-//   const [firstRun, setFirstRun] = React.useState<boolean>(true);
-
-//   React.useEffect(() => {
-//     const setData = async () => {
-//       firstRun && setFirstRun(false);
-//       setLoading(true);
-//       const apiReponse = await getResponse(username);
-//       setApiReponse(apiReponse);
-//       if (!(apiReponse.user)) {
-//         setLoading(false);
-//       }
-//     };
-//     if (username !== '') setData();
-//   }, [username]);
-
-//   return {
-//     apiResponse, loading, setUsername, firstRun,
-//   };
-// };
 
 const App: React.FC = () => {
   const {

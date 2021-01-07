@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { User } from './interfaces';
+import { User } from './userInterfaces';
 import { Color, Heading, SRHeading } from './styles';
 
 interface ContainerDiv {
@@ -58,17 +58,17 @@ const Repos = styled.ul`
 interface BadgeProps {
   user: User | undefined,
   loading: boolean,
-  setLoading: React.Dispatch<React.SetStateAction<boolean>>,
+  // setLoading: React.Dispatch<React.SetStateAction<boolean>>,
 }
 
-export const Badge: React.FC<BadgeProps> = ({ user, loading, setLoading }) => (
+export const Badge: React.FC<BadgeProps> = ({ user, loading }) => (
   <Container $loading={loading} aria-hidden={loading}>
     <SRHeading>GitHub user found.</SRHeading>
     <IdContainer>
       <Img
         src={user?.avatar_url}
         alt={`Avatar of ${user?.name || user?.login}`}
-        onLoad={() => setLoading(false)}
+        // onLoad={() => setLoading(false)}
       />
       <Username>{user?.name || user?.login}</Username>
     </IdContainer>

@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { User, Repository, UserApiResponse } from './interfaces';
+import { User, Repository, UserApiResponse } from './userInterfaces';
 
 export const getUser = async (username: string): Promise<User> => {
   const baseUrl = 'https://api.github.com/users/';

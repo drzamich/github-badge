@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-import { User, Repository } from '../interfaces';
+import { User, Repository } from '../userInterfaces';
 
 export const parsedUser: User = {
   name: 'Tejas Kumar',

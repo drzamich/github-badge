@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { parsedUser, parsedRepos, finalUser } from '../mocks/ParsedUserInfo';
 import { getUser, getRepositories, getResponse } from '../apiHandler';
-import { UserApiResponse } from '../interfaces';
+import { UserApiResponse } from '../userInterfaces';
 import {
   internalServerError, notFoundError, reposResponse, userReponse,
 } from '../mocks/MockedHTTPResponses';

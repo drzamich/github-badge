@@ -1,7 +1,7 @@
 import { AxiosError, AxiosResponse } from 'axios';
 import UserEndpointResponse from './UserEndpointResponse.json';
 import ReposEndpointResponse from './ReposEndpointResponse.json';
-import { Repository, User } from '../interfaces';
+import { Repository, User } from '../userInterfaces';
 
 const defResponse = {
   headers: [],

@@ -1,16 +1,17 @@
 import axios from 'axios';
 import { User, Repository, UserApiResponse } from './userInterfaces';
 
+const BASE_URL = 'https://api.github.com/users/';
+
 export const getUser = async (username: string): Promise<User> => {
-  const baseUrl = 'https://api.github.com/users/';
-  return axios.get<User>(`${baseUrl}${username}`)
-    .then((res) => res.data)
-    .then(({
-      login, name, avatar_url, bio,
-    }) => ({
-      login, name, avatar_url, bio,
-    }))
-    .catch((error) => { throw error; });
+  const result = await axios.get<User>(`${BASE_URL}${username}`);
+  const {
+    // eslint-disable-next-line @typescript-eslint/naming-convention
+    login, avatar_url, bio, name,
+  } = result.data;
+  return {
+    login, avatar_url, bio, name,
+  };
 };
 
 export const getRepositories = async (username: string): Promise<Repository[]> => {
@@ -20,8 +21,7 @@ export const getRepositories = async (username: string): Promise<Repository[]> =
     return sortedByStars.slice(0, reposCount);
   };
 
-  const baseUrl = 'https://api.github.com/users/';
-  return axios.get<Repository[]>(`${baseUrl}${username}/repos`)
+  return axios.get<Repository[]>(`${BASE_URL}${username}/repos`)
     .then((res) => res.data)
     .then((res) => res?.map(
       ({ full_name, html_url, stargazers_count }) => ({ full_name, html_url, stargazers_count }),
